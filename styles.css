@@ -6,3 +6,6 @@
 
 /* Align the hero like the supplied reference: copy left, photograph right */
 .hero{direction:ltr}.hero-copy{direction:rtl;text-align:center;margin-inline:auto}.hero-copy .brand-title{text-align:center}.hero h1{text-align:center}.hero-description{margin-inline:auto}.hero-main-image{object-position:center}
+
+/* Small, targeted hero typography adjustment only */
+.hero-copy .brand-title{font-size:34px;line-height:1.25;margin:0 0 8px;text-shadow:0 1px 24px #d5ae7020}.hero-copy .brand-title span{font-size:16px;letter-spacing:3.8px;margin-top:3px}.hero-copy .brand-title::after{content:"";display:block;width:72px;height:1px;margin:8px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}.hero-copy .hero-subtitle{margin:7px 0 13px}@media(max-width:650px){.hero-copy .brand-title{font-size:28px}.hero-copy .brand-title span{font-size:15px;letter-spacing:3px}.hero-copy .hero-subtitle{margin-top:6px}}
