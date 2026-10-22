@@ -1,1 +1,1 @@
-/* Public settings only. Add Supabase project URL + anon/publishable key. Never add service_role keys here. */ window.AHL_CONFIG={supabaseUrl:"",supabaseAnonKey:""};
+/* Public browser settings only. Never add service_role or secret keys here. */ window.AHL_CONFIG={supabaseUrl:"https://ioxsycahiemtbeqsxvlj.supabase.co",supabaseAnonKey:"sb_publishable_oonOb6mhWjvp-ZDptBUoVQ_Z562V8E0"};
