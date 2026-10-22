@@ -1,1 +1,1 @@
-/* Public browser settings only. Never add service_role or secret keys here. */ window.AHL_CONFIG={supabaseUrl:"https://ioxsycahiemtbeqsxvlj.supabase.co",supabaseAnonKey:"sb_publishable_oonOb6mhWjvp-ZDptBUoVQ_Z562V8E0"};
+/* Public browser settings only. Never add service_role or secret keys here. */ window.AHL_CONFIG={supabaseUrl:"https://ioxsycahiemtbeqsxvlj.supabase.co",supabaseAnonKey:"sb_publishable_oonOb6mhWjvp-ZDptBUoVQ_Z562V8E0",whatsappNumber:"962789833904"};
