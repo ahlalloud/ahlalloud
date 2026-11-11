@@ -12,3 +12,17 @@
 
 /* Three-day 50% promotion banner and sale prices */
 .promo-marquee{height:38px;overflow:hidden;position:sticky;top:0;z-index:40;display:flex;align-items:center;background:linear-gradient(90deg,#33200e,#9b6b32,#33200e);border-bottom:1px solid #f3d7a3;color:#fff0d5}.promo-track{display:flex;align-items:center;width:max-content;min-width:200%;white-space:nowrap;animation:ahl-promo-scroll 18s linear infinite;direction:rtl}.promo-track span{padding:0 2.5rem;font-size:12px;font-weight:600}.promo-track span[aria-hidden=true]{color:#f3d7a3}@keyframes ahl-promo-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}.sale-active .site-header{top:38px}.sale-price{color:var(--gold2);font-weight:700;margin-inline:8px}.old-price{text-decoration:line-through;color:#aaa08f;font-size:.78em;margin-inline:5px}.sale-pill{display:inline-block;margin-inline:8px;border-radius:20px;border:1px solid var(--gold);color:var(--gold2);padding:2px 8px;font:600 10px var(--font-ar)}.sale-summary-note{display:block;color:var(--gold2);font-size:10px}@media(prefers-reduced-motion:reduce){.promo-track{animation:none;justify-content:center;width:100%;min-width:100%}}@media(max-width:650px){.promo-marquee{height:36px}.promo-track span{font-size:11px;padding-inline:1.5rem}.sale-active .site-header{top:36px}}
+
+
+/* Refined, single-line luxury news ticker */
+.promo-marquee{position:sticky;top:0;z-index:41;display:flex!important;align-items:center;width:100%;height:42px;max-height:42px;overflow:hidden!important;white-space:nowrap;background:linear-gradient(90deg,#100b06 0%,#24170b 22%,#3c2812 50%,#24170b 78%,#100b06 100%);border-top:1px solid #9c7947;border-bottom:1px solid #c5a16a;box-shadow:0 3px 14px #0008;color:#f5dfb7;direction:ltr}
+.promo-track{display:flex!important;flex:0 0 auto;align-items:center;width:max-content;min-width:max-content;height:100%;white-space:nowrap;direction:ltr;animation:ahl-news-ticker 26s linear infinite;will-change:transform}
+.promo-item{display:inline-flex!important;flex:0 0 auto;flex-wrap:nowrap!important;align-items:center;gap:10px;height:100%;padding:0 34px;white-space:nowrap!important;direction:rtl;font-family:Alexandria,sans-serif;font-size:12px;font-weight:500;line-height:1;color:#f5dfb7}
+.promo-item strong{font-size:14px;font-weight:700;color:#f3d29a}
+.promo-star{color:#e3c18a;font-size:14px}
+.promo-dot{font-size:8px;color:#a9854f}
+@keyframes ahl-news-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.promo-marquee:hover .promo-track{animation-play-state:paused}
+.sale-active .site-header{top:42px}
+@media(max-width:650px){.promo-marquee{height:40px;max-height:40px}.promo-item{gap:8px;padding:0 22px;font-size:11px}.promo-item strong{font-size:13px}.sale-active .site-header{top:40px}}
+@media(prefers-reduced-motion:reduce){.promo-track{animation:none;transform:none;justify-content:center}.promo-item[aria-hidden=true]{display:none!important}}
