@@ -26,3 +26,11 @@
 .sale-active .site-header{top:42px}
 @media(max-width:650px){.promo-marquee{height:40px;max-height:40px}.promo-item{gap:8px;padding:0 22px;font-size:11px}.promo-item strong{font-size:13px}.sale-active .site-header{top:40px}}
 @media(prefers-reduced-motion:reduce){.promo-track{animation:none;transform:none;justify-content:center}.promo-item[aria-hidden=true]{display:none!important}}
+
+/* Exact ticker spacing overrides: prevent generic span rules from adding large gaps */
+.promo-track .promo-item{display:inline-flex!important;flex:0 0 auto;flex-wrap:nowrap!important;align-items:center;gap:10px;height:100%;padding:0 34px;font-size:12px;line-height:1;white-space:nowrap!important}
+.promo-track .promo-item span{flex:0 0 auto;padding:0;font-size:inherit;line-height:1;white-space:nowrap}
+.promo-track .promo-item .promo-star{padding:0;color:#e3c18a;font-size:14px}
+.promo-track .promo-item .promo-dot{padding:0;color:#a9854f;font-size:8px}
+.promo-track .promo-item strong{flex:0 0 auto;padding:0;color:#f3d29a;font-size:14px;line-height:1;white-space:nowrap}
+@media(max-width:650px){.promo-track .promo-item{gap:8px;padding:0 22px;font-size:11px}.promo-track .promo-item strong{font-size:13px}}
