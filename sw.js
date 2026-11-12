@@ -1,9 +1,9 @@
-const CACHE_NAME = 'ahl-al-oud-v3-20261112';
+const CACHE_NAME = 'ahl-al-oud-v4-20261112-product-polish';
 const CORE_ASSETS = [
   './',
   './index.html',
-  './styles.css?v=20261112-refresh',
-  './app.js?v=20261112-refresh',
+  './styles.css?v=20261112-product-polish',
+  './app.js?v=20261112-product-polish',
   './config.js',
   './manifest.webmanifest',
   './assets/icon.svg?v=20261112-refresh'
