@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<rect width="512" height="512" rx="72" fill="#10100f"/>
-<rect x="34" y="34" width="444" height="444" rx="54" fill="none" stroke="#c9a86a" stroke-width="3"/>
-<path d="M256 100 365 210 256 319 147 210Z" fill="none" stroke="#c9a86a" stroke-width="3"/>
-<text x="256" y="230" text-anchor="middle" font-family="Arial,sans-serif" font-size="48" fill="#f4efe5">أهل</text>
-<text x="256" y="280" text-anchor="middle" font-family="Arial,sans-serif" font-size="38" fill="#c9a86a">العود</text>
-<text x="256" y="385" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" letter-spacing="5" fill="#f4efe5">AHL AL-OUD</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<rect width="256" height="256" rx="56" fill="#193c34"/>
+<circle cx="128" cy="128" r="93" fill="none" stroke="#c99a70" stroke-width="2.5"/>
+<circle cx="128" cy="128" r="82" fill="none" stroke="#c99a70" stroke-opacity=".35" stroke-width="1"/>
+<path d="M52 183h152" stroke="#c99a70" stroke-width="1.5" stroke-linecap="round" opacity=".8"/>
+<text x="128" y="151" text-anchor="middle" font-family="serif" font-size="112" font-weight="700" fill="#f3e9d7">ع</text>
+<path d="m128 35 5 9-5 9-5-9 5-9Zm0 168 5 9-5 9-5-9 5-9Z" fill="#c99a70"/>
 </svg>
