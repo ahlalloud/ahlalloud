@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap');
-
 :root{
   --forest:#193c34;
   --forest-deep:#102c26;
@@ -39,8 +37,8 @@ svg{display:block}
 ::selection{background:var(--sage-dark);color:var(--forest-deep)}
 .announcement{position:sticky;top:0;z-index:90;height:42px;overflow:hidden;background:linear-gradient(90deg,#102b25 0%,#214a3d 35%,#2e5948 50%,#214a3d 70%,#102b25 100%);color:#f8eedc;border-top:1px solid rgba(215,178,135,.38);border-bottom:1px solid rgba(215,178,135,.8);box-shadow:0 3px 14px rgba(17,36,30,.12)}
 .announcement-viewport{height:100%;width:100%;overflow:hidden}
-.announcement-track{display:flex;flex-wrap:nowrap;align-items:center;width:max-content;min-width:200%;height:100%;direction:ltr;will-change:transform;animation:announcement-scroll 24s linear infinite}
-.announcement-copy{flex:0 0 auto;display:inline-flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:16px;height:100%;padding:0 34px;direction:rtl;white-space:nowrap;font-size:12px;line-height:1}
+.announcement-track{display:flex;flex-wrap:nowrap;align-items:center;width:max-content;min-width:0;height:100%;direction:ltr;will-change:transform;animation:announcement-scroll 24s linear infinite}
+.announcement-copy{flex:0 0 auto;min-width:100vw;display:inline-flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:16px;height:100%;padding:0 34px;direction:rtl;white-space:nowrap;font-size:12px;line-height:1}
 .announcement-copy strong{font-size:13px;font-weight:600;color:#f7e5c9;white-space:nowrap}
 .announcement-star{color:var(--copper-light);font-size:15px}
 .announcement-separator{font-size:8px;color:#caa477}
