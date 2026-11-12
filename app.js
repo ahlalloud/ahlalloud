@@ -453,6 +453,7 @@
 
     const dialog = $('#productDialog');
     dialog.hidden = false;
+    $('#pageOverlay').hidden = false;
     document.body.classList.add('dialog-open');
     $('#dialogClose')?.focus();
   }
@@ -461,6 +462,7 @@
     const dialog = $('#productDialog');
     if (!dialog || dialog.hidden) return;
     dialog.hidden = true;
+    $('#pageOverlay').hidden = Boolean($('#cartDrawer')?.classList.contains('open'));
     document.body.classList.remove('dialog-open');
     if (state.lastFocusedElement && typeof state.lastFocusedElement.focus === 'function') {
       state.lastFocusedElement.focus();
@@ -623,6 +625,7 @@
 
   function initDialog() {
     $('#dialogClose')?.addEventListener('click', closeProductDialog);
+    $('#pageOverlay')?.addEventListener('click', closeProductDialog);
     $('#productDialog')?.addEventListener('click', event => {
       if (event.target === $('#productDialog')) closeProductDialog();
     });
