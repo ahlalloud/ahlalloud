@@ -1,20 +1,11 @@
 {
-  "name": "أهل العود | AHL AL-OUD",
-  "short_name": "أهل العود",
-  "description": "عطور مختارة بلمسة فاخرة",
-  "lang": "ar",
-  "dir": "rtl",
-  "start_url": "./",
-  "scope": "./",
-  "display": "standalone",
-  "background_color": "#10100f",
-  "theme_color": "#10100f",
-  "icons": [
-    {
-      "src": "./assets/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
+  "name":"أهل العود | AHL AL-OUD",
+  "short_name":"أهل العود",
+  "lang":"ar",
+  "dir":"rtl",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f5f1e8",
+  "theme_color":"#193c34",
+  "icons":[{"src":"assets/icon.svg?v=20261112-refresh","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }
