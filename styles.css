@@ -426,3 +426,8 @@ body.admin-page{min-height:100vh;background:radial-gradient(circle at 15% 0%,#e7
 .admin-page .admin-preview{display:block;width:auto;max-width:min(240px,100%);max-height:220px;margin:10px 0;padding:8px;object-fit:contain;border:1px solid var(--line);border-radius:10px;background:#f0ece3}
 .admin-page input[type=file]{padding:9px;background:#f4f0e7}
 .admin-form-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+
+/* Keep the requested announcement ticker moving even when other motion is reduced */
+@media(prefers-reduced-motion:reduce){
+  .announcement-track{animation:announcement-scroll 40s linear infinite!important;animation-iteration-count:infinite!important}
+}
