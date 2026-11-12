@@ -497,3 +497,6 @@ body.admin-page{min-height:100vh;background:radial-gradient(circle at 15% 0%,#e7
 @media(prefers-reduced-motion:reduce){
   .promo-feature-inner,.promo-feature-media,.promo-feature-availability i,.product-card{animation:none!important}
 }
+
+/* Keep the campaign kicker text separate from the decorative hairline */
+.promo-feature-copy .eyebrow strong{display:inline-block;width:auto;height:auto;flex:0 0 auto;margin:0;padding:0;background:transparent;color:inherit;font:600 10px/1.7 var(--font-ar);white-space:nowrap}
