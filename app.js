@@ -37,7 +37,8 @@
   };
 
   const unitPrice = product => {
-    const base = Number(product?.price_jod);
+    if (product?.price_jod === null || product?.price_jod === undefined || product?.price_jod === '') return null;
+    const base = Number(product.price_jod);
     if (!Number.isFinite(base) || base < 0) return null;
     return promoPhase() === 'active' ? Math.round(base * 50) / 100 : base;
   };
@@ -127,7 +128,7 @@
     }
 
     if (changed) {
-      renderProducts();
+      if (state.products.length || $('#products')?.getAttribute('aria-busy') !== 'true') renderProducts();
       renderCart();
     }
   }
@@ -159,7 +160,7 @@
   }
 
   function appendPrice(container, product, compact = false) {
-    const price = Number(product.price_jod);
+    const price = product.price_jod === null || product.price_jod === undefined || product.price_jod === '' ? NaN : Number(product.price_jod);
     if (!Number.isFinite(price)) {
       container.append(createElement('span', 'price-unavailable', 'السعر عند الطلب'));
       return;
@@ -386,7 +387,7 @@
   function addToCart(id) {
     const product = state.products.find(item => String(item.id) === String(id));
     if (!product) return;
-    if (!Number.isFinite(Number(product.price_jod))) {
+    if (product.price_jod === null || product.price_jod === undefined || product.price_jod === '' || !Number.isFinite(Number(product.price_jod))) {
       alert('سعر هذا المنتج غير محدد حاليًا. تواصل معنا لتأكيد السعر.');
       return;
     }
@@ -423,10 +424,9 @@
     const layout = createElement('div', 'dialog-layout');
     const photo = productImage(product, 'dialog-photo', true);
     const details = createElement('div', 'dialog-details');
-    details.append(
-      createElement('span', 'product-category', categoryFor(product)),
-      createElement('h2', '', text(product.name_ar))
-    );
+    const dialogHeading = createElement('h2', '', text(product.name_ar));
+    dialogHeading.id = 'dialogProductName';
+    details.append(createElement('span', 'product-category', categoryFor(product)), dialogHeading);
 
     const price = createElement('div', 'product-price dialog-price');
     appendPrice(price, product);
@@ -485,7 +485,7 @@
       return;
     }
 
-    const invalidItem = items.some(item => !Number.isFinite(Number(item.product.price_jod)));
+    const invalidItem = items.some(item => item.product.price_jod === null || item.product.price_jod === undefined || item.product.price_jod === '' || !Number.isFinite(Number(item.product.price_jod)));
     if (invalidItem) {
       alert('يوجد منتج بلا سعر محدد. تواصل معنا لتأكيد السعر قبل إرسال الطلب.');
       return;
