@@ -86,14 +86,14 @@
     let foot = 'من الجمعة 13 نوفمبر حتى نهاية الأحد 15 نوفمبر';
 
     if (phase === 'upcoming') {
-      headline = 'بكرا الجمعة يبدأ خصم 50% على جميع الأصناف';
-      subline = 'الجمعة 13 نوفمبر — الأحد 15 نوفمبر';
+      headline = 'بكرا الجمعة — خصم 50% على جميع الأصناف';
+      subline = '13 نوفمبر إلى 15 نوفمبر · ثلاثة أيام فقط';
       kicker = 'استعدّوا للعرض';
       title = 'باقي على انطلاق الخصم';
       target = PROMO_START;
     } else if (phase === 'active') {
-      headline = 'خصم 50% على جميع الأصناف — العرض مستمر لثلاثة أيام';
-      subline = 'حتى نهاية الأحد 15 نوفمبر';
+      headline = 'خصم 50% على جميع الأصناف — العرض متاح الآن';
+      subline = 'الجمعة 13 نوفمبر — الأحد 15 نوفمبر';
       kicker = 'العرض متاح الآن';
       title = 'ينتهي الخصم بعد';
       target = PROMO_END;
@@ -111,6 +111,12 @@
     setText('#countdownKicker', kicker);
     setText('#countdownTitle', title);
     setText('#countdownFoot', foot);
+    const promoFeature = $('#saleFeature');
+    if (promoFeature) promoFeature.hidden = phase === 'ended';
+    setText('#promoFeatureKicker', phase === 'upcoming' ? 'عرض الجمعة المنتظر' : phase === 'active' ? 'العرض بدأ الآن' : 'أهل العود');
+    setText('#promoFeatureTitle', phase === 'upcoming' ? 'غدًا يبدأ الخصم الأكبر' : phase === 'active' ? 'الخصم الأكبر متاح الآن' : 'شكرًا لثقتكم');
+    setText('#promoFeatureNote', phase === 'upcoming' ? 'الجمعة 13 نوفمبر — الأحد 15 نوفمبر · ثلاثة أيام فقط' : phase === 'active' ? 'الخصم مستمر حتى نهاية الأحد 15 نوفمبر' : 'نلتقي بكم في عروض قادمة');
+    setText('#promoFeatureStatus', phase === 'upcoming' ? 'يبدأ غدًا' : phase === 'active' ? 'متاح الآن' : 'انتهى العرض');
 
     const grid = $('.countdown-grid');
     if (grid) grid.hidden = phase === 'ended';
@@ -166,10 +172,11 @@
       return;
     }
 
-    if (promoPhase() === 'active') {
+    if (promoPhase() === 'active' || promoPhase() === 'upcoming') {
       const old = createElement('s', 'old-price', money(price));
-      const current = createElement('strong', 'sale-price', money(unitPrice(product)));
-      const badge = createElement('span', 'sale-badge', 'خصم 50%');
+      const futurePrice = Math.round(price * 50) / 100;
+      const current = createElement('strong', 'sale-price', money(futurePrice));
+      const badge = createElement('span', 'sale-badge', promoPhase() === 'active' ? 'خصم 50%' : 'يبدأ غدًا');
       container.classList.add(compact ? 'price-line-compact' : 'price-line-sale');
       container.append(old, current, badge);
     } else {
@@ -350,6 +357,7 @@
         );
       } else {
         price.textContent = money(current);
+        if (promoPhase() === 'upcoming') price.append(createElement('span', 'cart-upcoming-note', ' · الخصم يبدأ الجمعة'));
       }
 
       const controls = createElement('div', 'quantity-controls');
@@ -382,6 +390,9 @@
       discountRow.hidden = promoPhase() !== 'active' || !items.length;
       setText('#cartSavings', '−' + money(savings));
     }
+    setText('#cartDeliveryNote', promoPhase() === 'upcoming'
+      ? 'السعر الحالي محفوظ؛ خصم 50% يُفعّل تلقائيًا الجمعة 13 نوفمبر.'
+      : 'رسوم التوصيل تُحدد من المتجر.');
   }
 
   function addToCart(id) {
